@@ -39,7 +39,7 @@
 %global use_inotify 0
 %endif
 
-%global use_dnf %{with python3} && (0%{?fedora} || (0%{?rhel}))
+%global use_dnf ((%{with python3} && 0%{?fedora}) || (0%{?rhel} >= 7))
 %global use_yum (0%{?rhel} && 0%{?rhel} <= 7) || (0%{?suse_version})
 %global use_cockpit 0%{?fedora} || 0%{?rhel} >= 7
 
